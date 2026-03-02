@@ -31,7 +31,7 @@ export default definePlugin({
     styles(o: string | undefined) {
         return ({
             "background-color": o || "var(--background-mod-strong)",
-            "color": o ? getFgFor(o) : "var(--text-default)",
+            "color": (o && o.startsWith("#")) ? getFgFor(o) : "var(--text-default)",
             "padding": "0 4px",
             "margin-top": "2px",
             "margin-bottom": "2px",
